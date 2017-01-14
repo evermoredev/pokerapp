@@ -19,12 +19,6 @@ export default class App extends React.Component {
               <li>PokerApp</li>
             </ul>
           </nav>
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/chart">Chart</Link></li>
-          </ul>
-
-          <hr/>
 
           <Match exactly pattern="/" component={HomeView} />
           <Match pattern="/chart" component={ChartView} />
@@ -34,22 +28,22 @@ export default class App extends React.Component {
           <footer>
             <ul>
               <li>
-                <a href="#">
+                <Link to="/">
                   <i className="fa fa-home" aria-hidden="true" />
                   <span>Home</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="#">
                   <i className="fa fa-area-chart" aria-hidden="true" />
                   <span>Results</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#">
+                <Link to="/chart">
                   <i className="fa fa-bar-chart" aria-hidden="true" />
                   <span>Charts</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#">
