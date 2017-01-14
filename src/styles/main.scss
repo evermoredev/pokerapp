@@ -75,6 +75,10 @@ footer {
 }
 
 /* Chart stuff */
+svg {
+  width: 100vw;
+}
+
 .area {
   fill: steelblue;
   clip-path: url(#clip);

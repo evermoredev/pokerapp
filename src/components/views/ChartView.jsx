@@ -5,18 +5,44 @@ class ChartView extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      data: null
+    }
   }
 
-  componentDidMount() {
+  getData() {
+    const parseDate = d3.timeParse("%b %Y");
+
+    const type = (d) => {
+      d.date = parseDate(d.date);
+      d.price = +d.price;
+      return d;
+    };
+
+    d3.csv("static/data.csv", type, (err, data) => {
+      this.setState({ data });
+      window.addEventListener("resize", () => this.drawChart(this.state.data));
+    });
+  }
+
+  componentWillMount() {
+    this.getData();
+  }
+
+  drawChart(data) {
+
+    document.getElementById("svg").innerHTML = '';
+    const svgWidth = document.getElementById("svg").clientWidth;
+    // const svgHeight = document.getElementById("svg").clientHeight;
 
     const svg = d3.select("svg"),
       margin = {top: 20, right: 20, bottom: 110, left: 40},
       margin2 = {top: 430, right: 20, bottom: 30, left: 40},
-      width = +svg.attr("width") - margin.left - margin.right,
+
+      width = +svgWidth - margin.left - margin.right,
       height = +svg.attr("height") - margin.top - margin.bottom,
       height2 = +svg.attr("height") - margin2.top - margin2.bottom;
-
-    const parseDate = d3.timeParse("%b %Y");
 
     const brushed = () => {
       if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
@@ -36,12 +62,6 @@ class ChartView extends React.Component {
       focus.select(".area").attr("d", area);
       focus.select(".axis--x").call(xAxis);
       context.select(".brush").call(brush.move, x.range().map(t.invertX, t));
-    };
-
-    const type = (d) => {
-      d.date = parseDate(d.date);
-      d.price = +d.price;
-      return d;
     };
 
     const x = d3.scaleTime().range([0, width]),
@@ -89,58 +109,58 @@ class ChartView extends React.Component {
       .attr("class", "context")
       .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-    d3.csv("static/data.csv", type, (error, data) => {
-      if (error) throw error;
+    x.domain(d3.extent(data, d => d.date ));
+    y.domain([0, d3.max(data, d => d.price )]);
+    x2.domain(x.domain());
+    y2.domain(y.domain());
 
-      x.domain(d3.extent(data, d => d.date ));
-      y.domain([0, d3.max(data, d => d.price )]);
-      x2.domain(x.domain());
-      y2.domain(y.domain());
+    focus.append("path")
+      .datum(data)
+      .attr("class", "area")
+      .attr("d", area);
 
-      focus.append("path")
-        .datum(data)
-        .attr("class", "area")
-        .attr("d", area);
+    focus.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
 
-      focus.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
+    focus.append("g")
+      .attr("class", "axis axis--y")
+      .call(yAxis);
 
-      focus.append("g")
-        .attr("class", "axis axis--y")
-        .call(yAxis);
+    context.append("path")
+      .datum(data)
+      .attr("class", "area")
+      .attr("d", area2);
 
-      context.append("path")
-        .datum(data)
-        .attr("class", "area")
-        .attr("d", area2);
+    context.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height2 + ")")
+      .call(xAxis2);
 
-      context.append("g")
-        .attr("class", "axis axis--x")
-        .attr("transform", "translate(0," + height2 + ")")
-        .call(xAxis2);
+    context.append("g")
+      .attr("class", "brush")
+      .call(brush)
+      .call(brush.move, x.range());
 
-      context.append("g")
-        .attr("class", "brush")
-        .call(brush)
-        .call(brush.move, x.range());
-
-      svg.append("rect")
-        .attr("class", "zoom")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
-        .call(zoom);
-    });
+    svg.append("rect")
+      .attr("class", "zoom")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .call(zoom);
 
   }
 
   render() {
+    if (this.state.data) {
+      console.log(this.state.data);
+      this.drawChart(this.state.data);
+    }
     return (
       <div className="chart-view">
         <h1>Chart</h1>
-        <svg width="560" height="500"></svg>
+        <svg id="svg" height="500"></svg>
       </div>
     );
   }
