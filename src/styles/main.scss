@@ -4,3 +4,15 @@
 body {
   background: #EEE2E2;
 }
+
+/* Chart stuff */
+.area {
+  fill: steelblue;
+  clip-path: url(#clip);
+}
+
+.zoom {
+  cursor: move;
+  fill: none;
+  pointer-events: all;
+}
