@@ -5,7 +5,8 @@ import { BrowserRouter, Match, Miss, Link } from 'react-router';
 import {
   ChartView,
   HomeView,
-  NotFoundView
+  NotFoundView,
+  ResultsView
 } from './components/views/index.js';
 
 export default class App extends React.Component {
@@ -22,6 +23,7 @@ export default class App extends React.Component {
 
           <Match exactly pattern="/" component={HomeView} />
           <Match pattern="/chart" component={ChartView} />
+          <Match pattern="/results" component={ResultsView} />
 
           {/* If none of those match, then a sibling `Miss` will render. */}
           <Miss component={NotFoundView} />
@@ -34,7 +36,7 @@ export default class App extends React.Component {
                 </Link>
               </li>
               <li>
-                <Link to="#">
+                <Link to="/results">
                   <i className="fa fa-area-chart" aria-hidden="true" />
                   <span>Results</span>
                 </Link>
