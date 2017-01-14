@@ -1,5 +1,5 @@
 {
-  "name": "evermoredev-react-boilerplate",
+  "name": "Pokerapp",
   "version": "1.1.0",
   "private": false,
   "description": "A fully-featured and pre-configured react boilerplate.",
@@ -10,11 +10,16 @@
     "react-boilerplate",
     "evermoredev"
   ],
-  "author": {
-    "name": "Nate Brady",
-    "email": "nathan.brady@yahoo.com",
-    "url": "http://github.com/everlib/everpaste"
-  },
+  "author": [
+    {
+      "name": "Nate Brady",
+      "email": "nathan.brady@yahoo.com"
+    },
+    {
+      "name": "Tony Nguyen",
+      "email": "codetony25@gmail.com"
+    }
+  ],
   "contributors": [
     {
       "name": "Nate Brady",

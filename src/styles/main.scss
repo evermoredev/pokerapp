@@ -2,7 +2,46 @@
 @import 'vendors/normalize.scss';
 
 body {
-  background: #EEE2E2;
+  background: white;
+}
+
+.main-nav {
+  background: #222222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      color: white;
+      font-family: 'Open Sans';
+      font-weight: bolder;
+      font-size: 20px;
+    }
+  }
+}
+
+footer {
+  background: #222;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0 35px;
+    li a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+    }
+  }
 }
 
 /* Chart stuff */
