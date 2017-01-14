@@ -9,7 +9,8 @@ class ResultsView extends React.Component {
           <li>
             <a href="#">
               <div className="results-logo">
-                <i className="fa fa-bolt" aria-hidden="true" />
+                {/*<i className="fa fa-bolt" aria-hidden="true" />*/}
+                <img src="static/images/ca-bicycle.jpg" width="100"/>
               </div>
               <div className="results-stats">
                 <ul>

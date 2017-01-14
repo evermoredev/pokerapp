@@ -16,7 +16,7 @@ class ChartView extends React.Component {
 
     const type = (d) => {
       d.date = parseDate(d.date);
-      d.price = +d.price;
+      d.profit = +d.profit;
       return d;
     };
 
@@ -87,13 +87,13 @@ class ChartView extends React.Component {
       .curve(d3.curveMonotoneX)
       .x(d => x(d.date))
       .y0(height)
-      .y1(d => y(d.price));
+      .y1(d => y(d.profit));
 
     const area2 = d3.area()
       .curve(d3.curveMonotoneX)
       .x(d => x2(d.date))
       .y0(height2)
-      .y1(d => y2(d.price));
+      .y1(d => y2(d.profit));
 
     svg.append("defs").append("clipPath")
       .attr("id", "clip")
@@ -110,7 +110,7 @@ class ChartView extends React.Component {
       .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
     x.domain(d3.extent(data, d => d.date ));
-    y.domain([0, d3.max(data, d => d.price )]);
+    y.domain([0, d3.max(data, d => d.profit )]);
     x2.domain(x.domain());
     y2.domain(y.domain());
 
