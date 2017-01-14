@@ -1,0 +1,12 @@
+# Node
+node_modules
+
+# Logs
+logs
+*.log
+
+# OSX
+.DS_Store
+
+# Editor related files
+.idea

@@ -1,0 +1,92 @@
+{
+  "name": "evermoredev-react-boilerplate",
+  "version": "1.1.0",
+  "private": false,
+  "description": "A fully-featured and pre-configured react boilerplate.",
+  "keywords": [
+    "react",
+    "es6",
+    "es7",
+    "react-boilerplate",
+    "evermoredev"
+  ],
+  "author": {
+    "name": "Nate Brady",
+    "email": "nathan.brady@yahoo.com",
+    "url": "http://github.com/everlib/everpaste"
+  },
+  "contributors": [
+    {
+      "name": "Nate Brady",
+      "email": "nathan.brady@yahoo.com"
+    },
+    {
+      "name": "Tony Nguyen",
+      "email": "codetony25@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evermoredev/react-boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evermoredev/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/evermoredev/react-boilerplate",
+  "license": "MIT",
+  "main": "index.js",
+  "bin": {
+    "babel-node": "./node_modules/.bin/babel-node",
+    "webpack": "./node_modules/bin/webpack",
+    "jest": "./node_modules/bin/jest"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "cross-env BABEL_ENV=production ./node_modules/.bin/webpack --config webpack.config.production.js",
+    "lint": "eslint --cache --ignore-path .gitignore --format=node_modules/eslint-formatter-pretty . *.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "history": "^4.5.0",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-router": "^4.0.0-alpha.5"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-react-transform": "^2.0.2",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.25.0",
+    "dasherize": "^2.0.0",
+    "enzyme": "^2.7.0",
+    "eslint": "^3.12.2",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-compat": "^0.1.3",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "2.2.3",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-react": "^6.8.0",
+    "jest": "^18.1.0",
+    "node-sass": "^3.10.1",
+    "postcss-loader": "^1.0.0",
+    "postcss-scss": "^0.3.1",
+    "postcss-smart-import": "^0.4.3",
+    "precss": "^1.4.0",
+    "react-addons-test-utils": "^15.4.1",
+    "react-test-renderer": "^15.4.1",
+    "react-transform-hmr": "^1.0.4",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
