@@ -6,6 +6,11 @@ body {
   overflow-x: hidden;
 }
 
+#root {
+  padding-top: 55px;
+  padding-bottom: 66px;
+}
+
 /* Main Navigation */
 .main-nav {
   background: #222222;
@@ -54,8 +59,6 @@ footer {
 
 /* Home View */
 .home-view {
-  padding-top: 50px;
-  padding-bottom: 50px;
   .home-list-container {
     padding: 0;
     display: flex;
@@ -83,9 +86,8 @@ footer {
 
 /* Results View */
 .results-view {
-  padding-top: 40px;
-  padding-bottom: 50px;
   .results-list-container {
+    margin-top: 1px;
     display: flex;
     list-style: none;
     padding: 0;
