@@ -5,7 +5,13 @@ class HomeView extends React.Component {
   render() {
     return (
       <div className="home-view">
-        <h1>Welcome Home!</h1>
+        <ul className="home-list-container">
+          <li>A Poker Event Near You</li>
+          <li>Poker Tournaments</li>
+          <li>Poker Podcasts</li>
+          <li>Learn Poker now!</li>
+          <li>Hand Percentages</li>
+        </ul>
       </div>
     );
   }
