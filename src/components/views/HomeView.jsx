@@ -4,7 +4,7 @@ class HomeView extends React.Component {
 
   render() {
     return (
-      <div className="home-view">
+      <div className="home-view content">
         <ul className="home-list-container">
           <li>A Poker Event Near You</li>
           <li>Poker Tournaments</li>

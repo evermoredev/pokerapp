@@ -5,6 +5,7 @@ html {
   height: 100vh;
   min-height: 100vh;
 }
+
 body {
   height: 100vh;
   min-height: 100vh;
@@ -50,6 +51,7 @@ footer {
   width: 100%;
   order: 3;
   flex-shrink: 0;
+  flex-basis: 50px;
   ul {
     display: flex;
     justify-content: space-between;
@@ -148,6 +150,8 @@ footer {
 .content {
   order: 2;
   overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
 }
 
 /* Chart stuff */

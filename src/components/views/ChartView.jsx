@@ -158,8 +158,8 @@ class ChartView extends React.Component {
       this.drawChart(this.state.data);
     }
     return (
-      <div className="chart-view">
-        <h1>Chart</h1>
+      <div className="chart-view content">
+        {/*<h1>Chart</h1>*/}
         <svg id="svg" height="500"></svg>
       </div>
     );
