@@ -14,7 +14,7 @@ export default class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className="wrapper">
           <nav className="main-nav">
             <ul>
               <li>PokerApp</li>

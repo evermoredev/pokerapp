@@ -60,7 +60,7 @@ class ResultsView extends React.Component {
 
   render() {
     return (
-      <div className="results-view">
+      <div className="results-view content">
         {this.state.data && this.renderResultsList()}
       </div>
     );
