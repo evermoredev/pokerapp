@@ -9,7 +9,7 @@ html {
 body {
   height: 100vh;
   min-height: 100vh;
-  background: white;
+  background: #cdcbb7;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -17,7 +17,6 @@ body {
 .wrapper {
   height: 100vh;
   min-height: 100vh;
-  background: white;
   display: flex;
   flex-direction: column;
 
@@ -106,19 +105,20 @@ footer {
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    li {
+      margin-bottom: 7px;
+    }
     li a {
       display: flex;
       width: 100%;
-      margin-bottom: 15px;
       box-shadow: 0 2px 8px rgba(14,21,47,0.25);
       font-family: 'Open Sans';
       padding: 10px;
-      background: #f4e5ea;
       text-decoration: none;
       justify-content: space-between;
       span {
         font-family: 'Open Sans';
-        font-size: 12px;
+        font-size: 15px;
       }
       .results-stats {
         display: flex;
@@ -131,7 +131,6 @@ footer {
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
-        margin-bottom: 12px;
         li {
           display: flex;
           flex-direction: column;
@@ -139,17 +138,20 @@ footer {
           align-items: center;
         }
       }
-      .results-location {
-        display: flex;
-        justify-content: space-around;
-      }
     }
   }
 }
 
+.positive {
+  background: #8ff4a5;
+}
+.negative {
+  background: #f4c2e3;
+}
+
 .content {
   order: 2;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   height: 100vh;
 }

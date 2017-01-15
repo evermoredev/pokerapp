@@ -1,51 +1,41 @@
 import React from 'react';
 import * as d3 from 'd3';
 
-class ChartView extends React.Component {
+class Chart extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.state = {
-      data: null
-    }
-  }
-
-  getData() {
-    const parseDate = d3.timeParse("%b %Y");
-
-    const type = (d) => {
-      d.date = parseDate(d.date);
-      d.profit = +d.profit;
-      return d;
-    };
-
-    d3.csv("static/data.csv", type, (err, data) => {
-      this.setState({ data });
-      window.addEventListener("resize", () => this.drawChart(this.state.data));
-    });
   }
 
   componentWillMount() {
-    this.getData();
+    window.addEventListener("resize", () => this.drawChart(this.props.data));
+  }
+
+  componentDidMount() {
+    this.drawChart(this.props.data);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("resize", () => this.drawChart(this.props.data));
   }
 
   drawChart(data) {
 
-    document.getElementById("svg").innerHTML = '';
-    const svgWidth = document.getElementById("svg").clientWidth;
-    // const svgHeight = document.getElementById("svg").clientHeight;
+    const svgEl = document.getElementById("svg");
+    svgEl.innerHTML = '';
+    const svgWidth = svgEl.clientWidth;
 
     const svg = d3.select("svg"),
       margin = {top: 20, right: 20, bottom: 110, left: 40},
       margin2 = {top: 430, right: 20, bottom: 30, left: 40},
-
       width = +svgWidth - margin.left - margin.right,
       height = +svg.attr("height") - margin.top - margin.bottom,
       height2 = +svg.attr("height") - margin2.top - margin2.bottom;
 
+
     const brushed = () => {
-      if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return; // ignore brush-by-zoom
+      // ignore brush-by-zoom
+      if (d3.event.sourceEvent && d3.event.sourceEvent.type === "zoom") return;
       const s = d3.event.selection || x2.range();
       x.domain(s.map(x2.invert, x2));
       focus.select(".area").attr("d", area);
@@ -56,7 +46,8 @@ class ChartView extends React.Component {
     };
 
     const zoomed = () => {
-      if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return; // ignore zoom-by-brush
+      // ignore zoom-by-brush
+      if (d3.event.sourceEvent && d3.event.sourceEvent.type === "brush") return;
       const t = d3.event.transform;
       x.domain(t.rescaleX(x2).domain());
       focus.select(".area").attr("d", area);
@@ -153,18 +144,13 @@ class ChartView extends React.Component {
   }
 
   render() {
-    if (this.state.data) {
-      console.log(this.state.data);
-      this.drawChart(this.state.data);
-    }
     return (
-      <div className="chart-view content">
-        {/*<h1>Chart</h1>*/}
+      <div className="chart">
         <svg id="svg" height="500"></svg>
       </div>
-    );
+    )
   }
 
 }
 
-export default ChartView;
+export default Chart;

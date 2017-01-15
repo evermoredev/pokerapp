@@ -1,81 +1,98 @@
 [
   {
     "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
+    "game": "No Limit Hold 'Em",
+    "stakes": "$2/$3",
+    "tableType": "Full Ring",
+    "date": "12/3/16",
+    "buyin": 300,
+    "cashout": 1650,
+    "bonuses": 0,
+    "expenses": 0,
+    "hours": "3h"
   },
   {
     "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
+    "game": "No Limit Hold 'Em",
+    "stakes": "$2/$3",
+    "tableType": "Full Ring",
+    "date": "12/5/16",
+    "buyin": 300,
+    "cashout": 800,
+    "bonuses": 0,
+    "expenses": 0,
+    "hours": "3h"
   },
   {
     "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
+    "game": "No Limit Hold 'Em",
+    "stakes": "$2/$3",
+    "tableType": "Full Ring",
+    "date": "12/6/16",
+    "buyin": 400,
+    "cashout": 665,
+    "bonuses": 0,
+    "expenses": 0,
+    "hours": "2h15m"
   },
   {
     "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
+    "game": "No Limit Hold 'Em",
+    "stakes": "$2/$3",
+    "tableType": "Full Ring",
+    "date": "12/7/16",
+    "buyin": 300,
+    "cashout": 885,
+    "bonuses": 0,
+    "expenses": 0,
+    "hours": "3h15m"
   },
   {
     "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
+    "game": "No Limit Hold 'Em",
+    "stakes": "$2/$3",
+    "tableType": "Full Ring",
+    "date": "12/8/16",
+    "buyin": 300,
+    "cashout": 650,
+    "bonuses": 0,
+    "expenses": 0,
+    "hours": "3h"
   },
   {
     "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
+    "game": "No Limit Hold 'Em",
+    "stakes": "$5/$5",
+    "tableType": "Full Ring",
+    "date": "12/13/16",
+    "buyin": 1000,
+    "cashout": 1710,
+    "bonuses": 0,
+    "expenses": 0,
+    "hours": "2h30m"
   },
   {
     "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
+    "game": "No Limit Hold 'Em",
+    "stakes": "$5/$5",
+    "tableType": "Full Ring",
+    "date": "12/14/16",
+    "buyin": 1000,
+    "cashout": 1650,
+    "bonuses": 0,
+    "expenses": 0,
+    "hours": "3h30m"
   },
   {
     "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
-  },
-  {
-    "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
-  },
-  {
-    "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
-  },
-  {
-    "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
-  },
-  {
-    "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
-  },
-  {
-    "location": "Bicycle Casino",
-    "buyin": 200,
-    "cashout": 500,
-    "hours": 3
+    "game": "No Limit Hold 'Em",
+    "stakes": "$5/$5",
+    "tableType": "Full Ring",
+    "date": "12/15/16",
+    "buyin": 1000,
+    "cashout": 0,
+    "bonuses": 0,
+    "expenses": 0,
+    "hours": "3h"
   }
-
 ]
